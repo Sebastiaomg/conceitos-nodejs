@@ -48,7 +48,7 @@ app.put("/repositories/:id", verifyExistRepository, (request, response) => {
     techs,
     likes: likes,
   }
-  return response.status(200).json(repositories[repIndex]);
+  return response.json(repositories[repIndex]);
 });
 
 app.delete("/repositories/:id", verifyExistRepository, (request, response) => {
@@ -60,7 +60,7 @@ app.delete("/repositories/:id", verifyExistRepository, (request, response) => {
 app.post("/repositories/:id/like", verifyExistRepository, (request, response) => {
   const repIndex = getRepoIndex(request.params.id);
   repositories[repIndex].likes += 1;
-  return response.status(200).json(repositories[repIndex]);
+  return response.json(repositories[repIndex]);
 });
 
 module.exports = app;
