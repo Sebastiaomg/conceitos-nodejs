@@ -17,7 +17,7 @@ function verifyExistRepository(req, res, next){
 }
 
 //pega o índice do repodistório
-getRepoIndex = (id) => repositories.findIndex(repo => repo.id === id);
+const getRepoIndex = (id) => repositories.findIndex(repo => repo.id === id);
 
 app.get("/repositories", (request, response) => {
   return response.json(repositories);
